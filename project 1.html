@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 8% 60px;
+      position: relative;
+    }
+
+    .hero-text {
+      max-width: 550px;
+      animation: fadeInLeft 1.2s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 58px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(56, 189, 248, 0.45);
+    }
+
+    .hero-image {
+      width: 420px;
+      height: 420px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(37,99,235,0.25));
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(56,189,248,0.3);
+      animation: pulse 3s infinite;
+    }
+
+    .hero-image img {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .features {
+      padding: 80px 8%;
+      background: #111827;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(56,189,248,0.08);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+    }
+
+    .card h3 {
+      margin: 20px 0 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .icon {
+      font-size: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b1120;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .hero-image {
+        width: 300px;
+        height: 300px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">BrandX</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Build Stunning <span>Web Experiences</span></h1>
+      <p>
+        Create modern, responsive, and animated websites that look professional and work beautifully on all devices.
+      </p>
+      <a href="#services" class="btn">Get Started</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Professional Design">
+    </div>
+  </section>
+
+  <section id="services" class="features">
+    <h2>Our Professional Solutions</h2>
+    <div style="max-width: 900px; margin: 0 auto 50px; color: #cbd5e1; font-size: 16px; line-height: 1.9;">
+      When users click the <strong>Get Started</strong> button, they are taken to a section that introduces professional digital services. This can include website design, mobile app development, branding, UI/UX design, SEO optimization, digital marketing, and business growth strategies.
+      <br><br>
+      The section can explain how the company helps clients transform ideas into modern digital experiences. It can also highlight a step-by-step workflow such as planning, design, development, testing, and final launch.
+      <br><br>
+      You can also include client success stories, pricing plans, team member introductions, customer testimonials, and a contact form so visitors can quickly connect with the business.
+    </div>
+
+    <section style="padding-bottom: 60px;">
+      <div class="cards">
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Business Strategy</h3>
+          <p>We create custom strategies to help businesses improve their online presence and attract more customers.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>Professional websites built with modern technologies, responsive layouts, and smooth user experiences.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Marketing Growth</h3>
+          <p>Digital marketing solutions including SEO, social media campaigns, and content strategies to grow your brand.</p>
+        </div>
+      </div>
+    </section>
+
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Fast Performance</h3>
+        <p>Optimized websites with smooth performance and fast loading speed.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Modern Design</h3>
+        <p>Clean layouts, elegant typography, and professional styling.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Responsive Layout</h3>
+        <p>Fully responsive design that works perfectly on mobile and desktop.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 BrandX. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
